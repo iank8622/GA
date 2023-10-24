@@ -1,10 +1,13 @@
-on: push
+name: Node Continuous Integration
+on: push 
 jobs:
-  first-job:
+  build-node:
+    name: build Node
     runs-on: mac-latest
+    container: node:20.0.0
     steps:
       - name:	Check Node.js version
-	run: 	node --version
-	
+        run: 	node --version
+    
       - name:	Check npm version
-	run: 	npm --version
+        run: 	npm --version
